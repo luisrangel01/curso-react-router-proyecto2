@@ -10,9 +10,9 @@ import { TodoItem } from "../../ui/TodoItem";
 import { TodosError } from "../../ui/TodosError";
 import { TodosLoading } from "../../ui/TodosLoading";
 import { EmptyTodos } from "../../ui/EmptyTodos";
-import { TodoForm } from "../../ui/TodoForm";
+// import { TodoForm } from "../../ui/TodoForm";
 import { CreateTodoButton } from "../../ui/CreateTodoButton";
-import { Modal } from "../../ui/Modal";
+// import { Modal } from "../../ui/Modal";
 import { ChangeAlert } from "../../ui/ChangeAlert";
 
 function HomePage() {
@@ -64,7 +64,7 @@ function HomePage() {
             text={todo.text}
             completed={todo.completed}
             onComplete={() => completeTodo(todo.id)}
-            onEdit={() => navigate(`/edit/${todo.id}`)}
+            onEdit={() => navigate(`/edit/${todo.id}`, { state: { todo } })}
             onDelete={() => deleteTodo(todo.id)}
           />
         )}
